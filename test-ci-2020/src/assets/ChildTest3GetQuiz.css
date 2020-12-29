@@ -1,0 +1,31 @@
+
+.mainScore {
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold ;
+}
+
+.listOfAnswers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+.listOfAnswers button {
+    border-radius: 10px;
+    background-color: lightpink;
+}
+.listOfAnswers button:focus {
+    outline: none;
+}
+
+.listOfAnswers button:active {
+    background-color: darkred;
+}

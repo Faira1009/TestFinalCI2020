@@ -1,0 +1,76 @@
+
+.task1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    padding-top: 10px;
+}
+.task1 input {
+   border-radius: 5px 5px 5px 5px;
+   width: 100%;
+   padding-left: 10px;
+   height: 20px;
+}
+.task1BtnMain {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px;
+}
+.task1Btn {
+    border-radius: 10px;
+    height: 20px;
+    display: flex;
+    background-color: lightpink;
+ 
+}
+.task1Btn:focus {
+    outline: none;
+}
+.task1Btn:active {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+}  
+
+.result {
+   background-color: lightslategray;
+   border-radius: 15px;
+   padding: 5px;
+   text-align: center;
+   font-weight: bold;
+   margin-top: 5px;
+}
+
+.textAreaBox {
+    display: flex;
+    margin-top: 20px;
+}
+
+.textAreaBox textarea {
+    border-radius: 5px;
+    padding:  10px 0 0 10px;
+}
+
+.rankBtn {
+   
+    display: flex;
+    justify-content: center;
+}
+.rankBtn button {
+    border-radius: 10px;
+    height: 20px;
+    display: flex;
+    background-color: lightpink;
+}
+
+.rankBtn button:focus {
+    outline: none;
+}
+.rankBtn button:active {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+}  
