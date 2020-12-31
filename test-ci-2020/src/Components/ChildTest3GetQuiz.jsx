@@ -36,7 +36,7 @@ export function ChildTest3GetQuiz (props) {
     else {
         return(
             <div className="mainTask3">
-                <div className="mainScore"> TỔNG SỐ ĐIỂM ĐẠT ĐƯỢC LÀ {props.finalScore}</div>
+                <div className="mainScore"> TỔNG SỐ ĐIỂM HIỆN TẠI LÀ {props.finalScore}</div>
                 <div>
                 <div>Quiz về {props.dataQuiz.category} số {props.questionNumber}</div>
                 <div> Độ Khó {props.dataQuiz.difficulty}</div>
