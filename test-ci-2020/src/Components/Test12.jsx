@@ -8,7 +8,8 @@ class Test12 extends React.Component {
         this.state = {
             array1: "",
             array2: "",
-            array3: 0
+            array3: 0,
+            array4: null
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleArray1 = this.handleArray1.bind(this)
@@ -59,11 +60,11 @@ class Test12 extends React.Component {
             
     }
 
-    handleTextArea (e) {
+     async handleTextArea (e) {
         let a = e.target.value;
-        let b = a.replace(/\s|\[|]/g, "");
-        let c = b.replace(/},{/g,"}a,a{");
-        let d = c.split("a,a");
+        let b =  await a.replace(/\s|\[|]/g, "");
+        let c = await b.replace(/},{/g,"}a,a{");
+        let d = await c.split("a,a");
         let stringToArray = [];
         for (let i = 0; i<d.length; i++) {
         let tempA = d[i].replace(/\{/g,"{\"").replace(/:/g,"\":").replace(/,/g,",\"")
@@ -72,19 +73,35 @@ class Test12 extends React.Component {
         }
 
         console.log(stringToArray)
-        this.setState ( { array4: 1})
-        console.log(this.state.array4)
+        this.setState ( { array4: stringToArray})
+        console.log(this.state.array4[0])
     }
 
-    returnRank() {
+    async returnRank() {
         let comparePoints = []
-        let compareTheRank1 = []
-        console.log (this.array4.length)
-        for (let i = 0; i< this.array4.length; i++) {
-            comparePoints.push(this.state.array4[i].points)
+        let compareTheRankFirstTime = []
+        let arrayObject = this.state.array4
+        console.log (this.state.array4.length)
+        for (let i =0; i < arrayObject.length; i++) {
+            comparePoints.push(arrayObject[i].points)
         }
+        let comparePointsFirstTime = await [...comparePoints]
         console.log(comparePoints)
+        for (let y =0; y < comparePointsFirstTime.length; y++){
+            let tempRank = 1;
+            for (let p= 0; p<comparePointsFirstTime.length; p++) {
+                if (comparePointsFirstTime[y] < comparePointsFirstTime[p]){
+                    tempRank= tempRank +1;
+                }
+                
+            }
+            compareTheRankFirstTime.push(tempRank)
+        }
+        console.log(compareTheRankFirstTime)
+        
     }
+
+
 render () {
     return (
         <>
